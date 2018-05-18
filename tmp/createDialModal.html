@@ -1,0 +1,70 @@
+<div>
+
+    <div class="row">
+        <div class="col-sm-6">
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="dial-url" placeholder="http://example.com"
+                           value="{{dial.url}}">
+
+                    <div class="history-ac">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control dial-name" id="dial-name" placeholder="Name"
+                           value="{{dial.name}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select name="dial-tabId" id="dial-tabId" class="form-control">
+                        {{#each tabs}}
+                        <option value="{{id}}" {{selected id ../dial.tabId}} >
+                            {{name}}
+                        </option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+
+            <div class="form-group">
+                <div class="slider">
+                    <div class="button next">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="button prev">
+                        <i class="fa fa-angle-left"></i>
+                    </div>
+
+                    <div class="slide colorBased" data-type="gen">
+                        <div class="inner">
+                            <div class="middle">
+                                <div>
+                                    <div class="favicon">
+                                        <img src="/images/19.png" alt="favicon" id="favicon" />
+                                    </div>
+                                    <div class="name"></div>
+                                </div>
+                                <div class="color-switcher"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn btn-info btn-sm btn-block btn-select-image" style="margin-bottom: 5px;">
+                    <i class="fa fa-image" style="margin-right: 10px"></i> Add local image</div>
+                <input type="file" style="display: none;" id="dial-create-file" />
+                <div class="btn btn-warning btn-sm reload-btn btn-block">
+                    <i class="fa fa-refresh" style="margin-right: 10px"></i> Load thumbnail suggestions</div>
+            </div>
+
+        </div>
+    </div>
+</div>

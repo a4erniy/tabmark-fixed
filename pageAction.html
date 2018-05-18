@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add to TabMark</title>
+
+    <!--<link rel="stylesheet" href="css/bootstrap.yeti.min.css"/>-->
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/css/pageAction.css"/>
+
+    <script type="text/javascript" src="jsm/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/handlebars-v2.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/underscore.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="slider">
+    <div class="button next">
+        <i class="fa fa-angle-right"></i>
+    </div>
+    <div class="button prev">
+        <i class="fa fa-angle-left"></i>
+    </div>
+
+    <div class="slide colorBased" data-type="gen">
+        <div class="inner">
+            <div class="middle">
+                <div>
+                    <div class="favicon">
+                        <img src="/images/19.png" alt="favicon" id="favicon" />
+                    </div>
+                    <div class="name"></div>
+                </div>
+                <div class="color-switcher"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide screenshot" data-type="image">
+        <img src="/images/loading.gif" alt="" id="screenshot"/>
+    </div>
+</div>
+
+
+
+
+<div class="form-group">
+    <label for="url">URL</label>
+    <input type="text" id="url" />
+</div>
+
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" />
+</div>
+
+<div class="form-group">
+    <label for="tab">Tab</label>
+    <select id="tab" name="tab"></select>
+</div>
+
+<div class="form-group btns">
+
+    <div class="btn btn-cancel">
+        Cancel
+    </div>
+    <div class="btn btn-save">
+        Save
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="jsm/helper.min.js"></script>
+<script type="text/javascript" src="jsm/pageAction.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<a class="dial {{extraClasses}}"
+   href="{{dial.url}}"
+   id="{{dial.id}}"
+   data-id="{{dial.id}}">
+
+    {{#if (ifEquals dial.type 'gen')}}
+        <div class="inner generated" style="background: {{dial.bgcolor}}; color: {{dial.fcolor}}" >
+            <div class="middle">
+                <div>
+                    <div class="favicon">
+                        <img src="{{dial.imgUrl}}" />
+                    </div>
+                    <div class="name">{{dial.name}}</div>
+                </div>
+                <!--<div class="counter">{{dial.counter}}</div>-->
+            </div>
+        </div>
+    {{else}}
+        <div class="inner image">
+            <div class="name">{{dial.name}} : {{dial.counter}}</div>
+
+            {{#if dial.imgUrl}}
+            <div class="bg" style="background-image: url('{{dial.imgUrl}}')"></div>
+            {{else}}
+            <img src="/images/new_dial_placeholder.png" class="placeholder-img" alt=""/>
+            <div class="placeholder-text">
+                <span>To create thumbnail</span><br>
+                <span style="color: #999">Click and wait the page to load completely</span>
+            </div>
+            {{/if}}
+
+        </div>
+    {{/if}}
+
+
+</a>

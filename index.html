@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New TabMark</title>
+
+    <link rel="icon" href="/images/32.png"/>
+
+    <link rel="stylesheet" href="css/bootstrap.yeti.min.css"/>
+    <link rel="stylesheet" href="plugins/context-menu/context.bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="plugins/jquery-ui-1.11.1/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="css/main.css?v=2"/>
+
+    <script type="text/javascript" src="jsm/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery-ui-1.11.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/handlebars-v2.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/underscore.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jsm/lib/context-menu.min.js"></script>
+
+</head>
+<body>
+
+<div class="toolbar">
+    <!-- Recent tabs button -->
+    <div class="btn-group btn-group-recent-tabs">
+        <button type="button" class="btn btn-options dropdown-toggle" data-toggle="dropdown" title="Recent tabs">
+            <i class="fa fa-reply"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header">
+                Recently closed tabs
+                <span class="btn btn-info pull-right btn-xs clear-btn">History</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Apps button -->
+    <div class="btn-group btn-group-chrome-apps" id="chromeApps">
+        <button type="button" class="btn btn-options dropdown-toggle" data-toggle="dropdown" title="Chrome Apps">
+            <i class="fa fa-th"></i>
+        </button>
+        <div class="dropdown-menu" role="menu"></div>
+    </div>
+
+    <!-- Options button-->
+    <div class="btn-group btn-group-options">
+        <button type="button" class="btn btn-options dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-ellipsis-v"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header">Options</li>
+            <li><a href="#" data-action="general">
+                <i class="fa fa-th-large"></i>
+                Speed Dial Options</a></li>
+            <li><a href="#" data-action="changeBackground">
+                <i class="fa fa-image"></i>
+                Change Background</a></li>
+            <li><a href="#" data-action="openDownloads">
+                <i class="fa fa-download"></i>
+                Downloads</a></li>
+            <li class="divider"></li>
+            <li><a href="#" data-action="ie">
+                <i class="fa fa-hdd-o"></i>
+                Import/Export</a></li>
+            <li class="divider"></li>
+            <li><a href="http://tabmark.me?ref=tabmark-ext">
+                <img src="/images/16.png" alt="Tabmark" style="margin-right: 5px;"/>
+                About TabMark</a></li>
+
+            <!-- Toggles -->
+            <li class="dropdown-header">Toggles</li>
+            <li class="list-toggle" data-name="dialsHoverAnimation" data-eval="options.toggleAnimations()">
+                <a href="#">
+                    <label class="checkbox">
+                        <input type="checkbox" />
+                        <div class="checkbox-i">
+                            <i class="on fa fa-check-square-o" ></i>
+                            <i class="off fa fa-square-o"></i>
+                        </div>
+                        Animations
+                    </label>
+                </a>
+            </li>
+            <li class="list-toggle" data-name="showSearchbar" data-eval="search.toggle()">
+                <a href="#">
+                    <label class="checkbox">
+                        <input type="checkbox" />
+                        <div class="checkbox-i">
+                            <i class="on fa fa-check-square-o" ></i>
+                            <i class="off fa fa-square-o"></i>
+                        </div>
+                        Searchbar
+                    </label>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Tabs -->
+<nav id="leftbar">
+    <div class="tabs"></div>
+    <div class="tab ctab">
+        <i class="fa fa-plus"></i>
+    </div>
+</nav>
+
+<!-- Search bar -->
+<div class="container" id="search">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <datalist id="search-autocomplete"></datalist>
+            <form action="https://www.google.com/search">
+                <input type="hidden" name="sourceid" value="tabmark" />
+                <input type="hidden" name="ie" value="UTF-8" />
+
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" id="current-engine" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img src="/images/favicons/www.google.com.ico" alt=""/>
+                            <!--<span class="caret"></span>-->
+                        </button>
+                        <ul class="dropdown-menu" role="menu"></ul>
+                    </div><!-- /btn-group -->
+
+                    <input type="text" class="form-control" name="q" id="search-query" placeholder="Search" autocomplete="off" list="search-autocomplete" required />
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- Dials -->
+<div class="container2 clearfix">
+
+    <div id="dials">
+
+        <div class="dials"></div>
+
+        <div class="dial add-dial" data-toggle="modal" data-target="#newDialModal">
+            <i class="fa fa-fw fa-plus"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Share buttons area -->
+<div id="share-btns">
+	<div class="text">Like us to remove this:</div>
+</div>
+
+
+<!-- Context menu for tabs -->
+<div id="tab-context-menu" class="dropdown-menu" role="menu">
+    <li><a href="#" tabindex="-1" data-action="openCEModal">Edit</a></li>
+    <li><a href="#" tabindex="-1" data-action="openDeleteModal">Delete</a></li>
+</div>
+
+<!-- Context menu for dials -->
+<div id="dial-context-menu" class="dropdown-menu" role="menu">
+	<li><a href="#" tabindex="-1" data-action="openInNewTab">Open in new tab</a></li>
+	<li><a href="#" tabindex="-1" data-action="openInBackground">Open in background tab</a></li>
+	<li class="divider"></li>
+    <li><a href="#" tabindex="-1" data-action="openCEModal">Edit</a></li>
+    <li><a href="#" tabindex="-1" data-action="openDeleteModal">Delete</a></li>
+</div>
+
+<!-- Context menu for apps -->
+<div id="chrome-app-context-menu" class="dropdown-menu" role="menu">
+    <li><a href="#" tabindex="-1" data-action="run">Run</a></li>
+    <li role="presentation" class="divider"></li>
+    <li><a href="#" tabindex="-1" data-action="webstore">View in Web Store</a></li>
+    <li><a href="#" tabindex="-1" data-action="uninstall">Uninstall</a></li>
+    <li><a href="#" tabindex="-1" data-action="createShortcut">Create shortcuts</a></li>
+</div>
+
+
+
+<!--<script type="text/javascript" src="jsm/db.js"></script>-->
+<script type="text/javascript" src="jsm/helper.min.js"></script>
+<script type="text/javascript" src="jsm/app.min.js?v=2"></script>
+
+</body>
+</html>

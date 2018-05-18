@@ -1,0 +1,58 @@
+<div class="">
+
+    <div id="options-bg">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#bg-wallpaper" role="tab" data-toggle="tab">Wallpapers</a></li>
+            <li><a href="#bg-patterns" role="tab" data-toggle="tab">Patterns</a></li>
+            <li><a href="#bg-custom" role="tab" data-toggle="tab">Custom</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="bg-wallpaper">
+                <div class="bg-walls clearfix"></div>
+            </div>
+
+            <div class="tab-pane" id="bg-patterns">
+                <div class="bg-patterns clearfix"></div>
+            </div>
+
+            <div class="tab-pane" id="bg-custom">
+                <div class="bg-custom clearfix">
+                    <div class="container-fluid">
+                        <div class="form-group">
+                            <label for="bg-custom-url" class="col-sm-3 control-label">Image URL</label>
+
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" id="bg-custom-url" class="form-control"
+                                           value="{{options.customBg}}">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default btn-load-custom-bg" type="button">Load</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="form-group">
+                            <label for="bg-custom-url" class="col-sm-3 control-label"></label>
+
+                            <div class="col-sm-9">
+                                <div class="btn btn-warning" id="bg-repeat">Repeat</div>
+                                <div class="btn btn-warning" id="bg-no-repeat">Fit to screen</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

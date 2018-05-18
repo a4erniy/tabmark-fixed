@@ -1,0 +1,37 @@
+<div>
+
+    <div class="form-group">
+        <label for="dialWidth" class="col-sm-3 control-label">Dial width</label>
+
+        <div class="col-sm-9">
+            <input type="range" min="200" max="400" step="10" id="dialWidth" class="" value="{{options.dialWidth}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="dialHeight" class="col-sm-3 control-label">Dial height</label>
+
+        <div class="col-sm-9">
+            <input type="range" min="150" max="300" step="10" id="dialHeight" class=""  value="{{options.dialHeight}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="dialHeight" class="col-sm-3 control-label">Dial spacing</label>
+
+        <div class="col-sm-9">
+            <input type="range" min="0" max="30" step="1" id="dialSpacing" class=""  value="{{options.dialSpacing}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="dialsHoverAnimation">Animation: </label>
+        <div class="col-sm-9">
+            <label class="checkbox">
+                <input id="dialsHoverAnimation" type="checkbox" {{checked options.dialsHoverAnimation true}} />
+                <div class="checkbox-i">
+                    <i class="on fa fa-check-square-o" ></i>
+                    <i class="off fa fa-square-o"></i>
+                </div>
+            </label>
+
+        </div>
+    </div>
+</div>

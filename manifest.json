@@ -1,0 +1,33 @@
+{
+   "background": {
+      "page": "bg.html"
+   },
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com/ 'unsafe-eval'; object-src 'self'",
+   "description": "The best replacement for the New Tab page with speed dials & search box",
+   "homepage_url": "http://tabmark.me",
+   "icons": {
+      "128": "images/128.png",
+      "16": "images/16.png",
+      "256": "images/256.png",
+      "32": "images/32.png",
+      "48": "images/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhqygvgd+pD6JvYdUUnC3XL8YakPQpNBHhAm8behYDdwABIQ/mg3l6zLtMugcHny+0UIsAHgWEUCKhMNfsameHzEwvzfSrURrh69ruxUnCFMyuaw29ytK9t6BgHztSdeI3UnaMPkc2bi9GKI50NF7A5qjj9iQ7cJbWnLJok3fu5GlOeGmhYIyeXfF2sYmq84SOjehQ27DNo2grWt7H8ZleQgV4Dnt13tjZccF/BRZpCnFJLRNR/SHxxFb2OcA4SPzr1iY0ROIch4n6vd8cY0pNTW6Q5xkfMwircJ/ZvMVKk5T9tCzVXW1a+f/+/hmxGazd4bcLjAuRetOv8KTEMiDowIDAQAB",
+   "manifest_version": 2,
+   "name": "TabMark - NewTab Speed Dial Extension",
+   "page_action": {
+      "default_icon": {
+         "19": "images/191.png",
+         "38": "images/38.png"
+      },
+      "default_popup": "pageAction.html",
+      "default_title": "Add to TabMark"
+   },
+   "permissions": [ "http://*/", "https://*/", "\u003Call_urls>", "bookmarks", "management", "history", "tabs", "topSites", "contextMenus", "unlimitedStorage", "sessions", "identity", "downloads", "identity", "storage", "webRequest", "webRequestBlocking" ],
+   "short_name": "TabMark",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.7"
+}
